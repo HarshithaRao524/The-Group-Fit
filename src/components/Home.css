@@ -1,0 +1,45 @@
+/* Container styling */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1rem;
+    min-height: 100vh;
+    background-color: #F0F4F3; /* subtle greenish background */
+    font-family: 'Inter', sans-serif;
+    color: #3b3b3b;
+  }
+  
+  /* Title styling */
+  .home-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #6F9A92; /* muted green */
+    line-height: 1.2;
+  }
+  
+  /* Description styling */
+  .home-description {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    color: #555555;
+    line-height: 1.6;
+  }
+  
+  /* CTA link styling */
+  .home-cta a {
+    color: #E07A5F; /* muted coral / pinkish */
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    transition: opacity 0.3s;
+  }
+  
+  .home-cta a:hover {
+    opacity: 0.8;
+  }
+  

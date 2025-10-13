@@ -1,0 +1,52 @@
+/* Fonts & Colors */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #FBF9F7;          /* Soft background */
+  --primary-color: #6F9A92;     /* Muted green */
+  --secondary-color: #E7A89D;   /* Muted coral */
+  --card-bg: #FFFFFF;            /* White for cards */
+  --text-color: #3b3b3b;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* General utility classes */
+.text-center { text-align: center; }
+.font-bold { font-weight: 700; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.rounded { border-radius: 0.5rem; }
+.shadow { box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+
+/* Button */
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.button:hover {
+  opacity: 0.8;
+}
+
+/* Card */
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
