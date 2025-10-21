@@ -1,0 +1,120 @@
+.reviews-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .login-section button {
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .review-form-section {
+    margin-bottom: 30px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .logout-btn {
+    margin-left: auto;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .review-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .review-form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .review-form button {
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .rate-us {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .star {
+    cursor: pointer;
+  }
+  
+  .reviews-list h3 {
+    margin-bottom: 10px;
+  }
+  
+  .review-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .profile-initials {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  
+  .review-content h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .rating {
+    display: flex;
+    gap: 2px;
+    margin: 5px 0;
+  }
+  
+  .review-content p {
+    margin: 0;
+    font-size: 14px;
+  }
+  

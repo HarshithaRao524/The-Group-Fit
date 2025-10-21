@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css"; // Import the CSS file
+import "../styles/Home.css"; // Import the CSS file
 
 const Home = () => {
   return (
@@ -8,11 +8,12 @@ const Home = () => {
         "Fitness is not a destination, it's a way of life"
       </h1>
       <p className="home-description">
-        At Group-Fit we provide fitness for all ages online or Offline! Yoga, Dance Fitness, Gymnastics and Athletic classes. 
+        At Group-Fit we provide fitness for all ages online or Offline! <br></br>
+        Yoga, Dance Fitness, Gymnastics and Athletic classes. <br></br>
         Join us on the journey to a healthier and happier you!!
       </p>
       <div className="home-cta">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/groupfit.social?igsh=MXBvenRzNWk0c2M2YQ==" target="_blank" rel="noopener noreferrer">
           Connect with us on Instagram
         </a>
       </div>
