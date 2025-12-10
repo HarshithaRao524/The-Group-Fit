@@ -23,6 +23,9 @@ export default function AdminSidebar() {
           <li>
             <NavLink to="/admin/dashboard/reviews">Reviews</NavLink>
           </li>
+          <li>
+            <NavLink to="/admin/dashboard/services">Services</NavLink>
+          </li>
         </ul>
       </nav>
     </aside>

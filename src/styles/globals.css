@@ -1,11 +1,30 @@
-/* Fonts & Colors */
+/* ✅ Must be at very top */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+/* ✅ Layout for sticky footer */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Color variables */
 :root {
-  --bg-color: #FBF9F7;          /* Soft background */
-  --primary-color: #6F9A92;     /* Muted green */
-  --secondary-color: #E7A89D;   /* Muted coral */
-  --card-bg: #FFFFFF;            /* White for cards */
+  --bg-color: #FBF9F7;
+  --primary-color: #6F9A92;
+  --secondary-color: #E7A89D;
+  --card-bg: #FFFFFF;
   --text-color: #3b3b3b;
 }
 
@@ -17,7 +36,7 @@ body {
   padding: 0;
 }
 
-/* General utility classes */
+/* Utility classes */
 .text-center { text-align: center; }
 .font-bold { font-weight: 700; }
 .mb-4 { margin-bottom: 1rem; }
