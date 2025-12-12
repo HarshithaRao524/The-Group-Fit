@@ -1,5 +1,5 @@
 // src/pages/BookNow.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/BookNow.css";
 
@@ -32,6 +32,9 @@ const CLASSES_PER_WEEK_OPTIONS = [1, 2, 3, 4, 5, 6];
 const BookNow = () => {
   const [activeForm, setActiveForm] = useState(null);
 
+  const newUserFormRef = useRef(null);
+  const trainerFormRef = useRef(null);
+
   // ---------- NEW USER STATE ----------
   const [nuFullName, setNuFullName] = useState("");
   const [nuAge, setNuAge] = useState("");
@@ -63,13 +66,40 @@ const BookNow = () => {
   const [trPhotoFile, setTrPhotoFile] = useState(null);
   const [trResumeFile, setTrResumeFile] = useState(null);
 
+  // ✅ open page from the very top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const scrollToForm = (form) => {
+    setTimeout(() => {
+      if (form === "newUser" && newUserFormRef.current) {
+        newUserFormRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+      if (form === "trainer" && trainerFormRef.current) {
+        trainerFormRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 0);
+  };
+
   const handleToggle = (form) => {
-    setActiveForm((prev) => (prev === form ? null : form));
+    if (activeForm === form) {
+      setActiveForm(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setActiveForm(form);
+      scrollToForm(form);
+    }
   };
 
   // ----- SUBMIT HANDLERS -----
 
-  // NEW USER REGISTRATION
   const handleNewUserSubmit = async (e) => {
     e.preventDefault();
 
@@ -98,7 +128,6 @@ const BookNow = () => {
     alert("Registration submitted!");
   };
 
-  // TRAINER REGISTRATION
   const handleTrainerSubmit = async (e) => {
     e.preventDefault();
 
@@ -169,8 +198,6 @@ const BookNow = () => {
         <div className="selection-card">
           <h3>Book Next Class</h3>
           <p>Already registered? Continue your fitness journey.</p>
-
-          {/* NEW: open dedicated Book Next Class page */}
           <Link to="/book-next-class">
             <button type="button">Book Now</button>
           </Link>
@@ -187,9 +214,8 @@ const BookNow = () => {
 
       {/* Forms */}
       <div className="form-section">
-        {/* ---------- NEW USER FORM ---------- */}
         {activeForm === "newUser" && (
-          <div className="form-box">
+          <div className="form-box" ref={newUserFormRef}>
             <h3>New User Registration Form</h3>
             <form onSubmit={handleNewUserSubmit}>
               <div className="form-row">
@@ -292,7 +318,7 @@ const BookNow = () => {
                     placeholder="Please specify society"
                     value={nuOtherSociety}
                     onChange={(e) => setNuOtherSociety(e.target.value)}
-                    style={{ marginTop: "8px" }}
+                    className="mt-8"
                     required
                   />
                 )}
@@ -371,7 +397,11 @@ const BookNow = () => {
 
               <div className="form-actions">
                 <button type="submit">Submit</button>
-                <button type="reset" onClick={() => window.location.reload()}>
+                <button
+                  type="reset"
+                  className="secondary-btn"
+                  onClick={() => window.location.reload()}
+                >
                   Reset
                 </button>
               </div>
@@ -379,9 +409,8 @@ const BookNow = () => {
           </div>
         )}
 
-        {/* ---------- TRAINER FORM ---------- */}
         {activeForm === "trainer" && (
-          <div className="form-box">
+          <div className="form-box" ref={trainerFormRef}>
             <h3>Trainer Registration Form</h3>
             <form onSubmit={handleTrainerSubmit}>
               <div className="form-row">
@@ -461,7 +490,7 @@ const BookNow = () => {
                     placeholder="Specify preferred time"
                     value={trAvailabilityTime}
                     onChange={(e) => setTrAvailabilityTime(e.target.value)}
-                    style={{ marginTop: "8px" }}
+                    className="mt-8"
                   />
                 )}
               </div>
@@ -482,7 +511,7 @@ const BookNow = () => {
                     placeholder="Mention your city"
                     value={trCityName}
                     onChange={(e) => setTrCityName(e.target.value)}
-                    style={{ marginTop: "8px" }}
+                    className="mt-8"
                   />
                 )}
               </div>
@@ -515,7 +544,11 @@ const BookNow = () => {
 
               <div className="form-actions">
                 <button type="submit">Submit</button>
-                <button type="reset" onClick={() => window.location.reload()}>
+                <button
+                  type="reset"
+                  className="secondary-btn"
+                  onClick={() => window.location.reload()}
+                >
                   Reset
                 </button>
               </div>

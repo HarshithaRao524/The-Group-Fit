@@ -20,6 +20,7 @@ import TrainersPage from "./pages/TrainersPage";
 import BookingsPage from "./pages/BookingsPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import AdminServices from "./pages/AdminServices";
+import AdminContacts from "./pages/AdminContacts";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 // NEW PAGES
@@ -55,7 +56,7 @@ function App() {
             {/* Admin login */}
             <Route path="/admin" element={<AdminLogin />} />
 
-            {/* Admin dashboard + nested routes */}
+            {/* Admin dashboard (protected) with nested routes */}
             <Route
               path="/admin/dashboard"
               element={
@@ -69,6 +70,7 @@ function App() {
               <Route path="bookings" element={<BookingsPage />} />
               <Route path="reviews" element={<ReviewsPage />} />
               <Route path="services" element={<AdminServices />} />
+              <Route path="contacts" element={<AdminContacts />} />
             </Route>
           </Routes>
         </main>

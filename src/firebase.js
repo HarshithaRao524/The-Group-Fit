@@ -12,8 +12,7 @@ const firebaseConfig = {
   storageBucket: "the-group-fit-firebase.appspot.com",
   messagingSenderId: "258362312319",
   appId: "1:258362312319:web:0f7f1095d938d1e20ce14a",
-  databaseURL:
-    "https://the-group-fit-firebase-default-rtdb.asia-southeast1.firebasedatabase.app/" // ✅ Added here instead of inside getDatabase
+  databaseURL: "https://the-group-fit-firebase-default-rtdb.asia-southeast1.firebasedatabase.app/"
 };
 
 // Initialize Firebase

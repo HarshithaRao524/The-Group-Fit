@@ -59,6 +59,22 @@
   background-image: url("/images/FreestyleDanceAdult.jpg");
   animation-delay: 18s;
 }
+.hero-slideshow .slide5 {
+  background-image: url("/images/FreestyleDanceKids.jpg");
+  animation-delay: 18s;
+}
+.hero-slideshow .slide6 {
+  background-image: url("/images/YogaKids.jpg");
+  animation-delay: 18s;
+}
+.hero-slideshow .slide7 {
+  background-image: url("/images/GymnasticsKids.jpg");
+  animation-delay: 18s;
+}
+.hero-slideshow .slide8 {
+  background-image: url("/images/ContemporaryDanceKids.jpg");
+  animation-delay: 18s;
+}
 
 /* Fade animation */
 @keyframes fadeSlideshow {

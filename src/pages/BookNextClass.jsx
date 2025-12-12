@@ -1,5 +1,5 @@
 // src/pages/BookNextClass.jsx
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import "../styles/BookNow.css";
 
 import { db, functions } from "../firebase";
@@ -60,6 +60,11 @@ const CLASSES_PER_WEEK_OPTIONS = [1, 2, 3, 4, 5, 6];
 const confirmBookingFnName = "confirmBooking";
 
 const BookNextClass = () => {
+  // ✅ always open page from top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // ---------- EXISTING USER STATE ----------
   const [exUserName, setExUserName] = useState("");
   const [exContact, setExContact] = useState("");

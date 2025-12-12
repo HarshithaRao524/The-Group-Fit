@@ -138,6 +138,10 @@ const Home = () => {
           <div className="slide slide2" />
           <div className="slide slide3" />
           <div className="slide slide4" />
+          <div className="slide slide5" />
+          <div className="slide slide6" />
+          <div className="slide slide7" />
+          <div className="slide slide8" />
         </div>
 
         {/* Dark overlay */}
