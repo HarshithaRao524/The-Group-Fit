@@ -1,0 +1,395 @@
+/* ========= BOOK NOW MAIN PAGE ========= */
+
+.booknow-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 72px;   /* top, sides, bottom */
+  text-align: center;
+  animation: fadeIn 0.7s ease;
+  min-height: calc(100vh - 40px);  /* page at least almost full height */
+}
+
+/* make sure we don't inherit Home hero's full-screen styles */
+.booknow-container .hero-section {
+  display: block;
+  min-height: auto;
+  height: auto;
+  margin-top: 40px;          /* distance from navbar */
+  margin-bottom: 75px;       /* ✅ nice gap before cards */
+  padding: 0;
+}
+
+.booknow-container .hero-section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff6b6b, #ff9f43);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0;
+}
+
+.booknow-container .hero-section p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ------- 3 selection cards row ------- */
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  margin-top: 4px;
+  flex-wrap: nowrap;
+}
+
+.selection-card {
+  flex: 1 1 0;
+  max-width: 360px;
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 18px;
+  border-left: 6px solid #ff6b6b;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.selection-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.selection-card h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.selection-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.selection-card button {
+  background: linear-gradient(90deg, #ff6b6b, #ff9f43);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.selection-card button:hover {
+  opacity: 0.9;
+}
+
+/* ========= FORM AREA (New User / Trainer) ========= */
+
+.form-section {
+  margin-top: 44px;          /* gap before forms when they open */
+}
+
+.form-box {
+  margin-top: 18px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.form-box h3 {
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-row label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  background-color: #f9fafb;
+  transition: border 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: #ef4c5d;
+  box-shadow: 0 0 0 3px rgba(239, 76, 93, 0.15);
+  background-color: #ffffff;
+}
+
+.form-row textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* inline options (gender radio buttons) */
+.inline-options {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.inline-options input {
+  width: auto;
+  margin-right: 4px;
+}
+
+/* form buttons */
+.form-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 9px 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ef4c5d, #f5874c);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 10px 22px rgba(239, 76, 93, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+
+.form-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(239, 76, 93, 0.4);
+}
+
+.form-actions button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(239, 76, 93, 0.3);
+  opacity: 0.95;
+}
+
+.form-actions .secondary-btn {
+  background: #e5e7eb;
+  color: #111827;
+  box-shadow: none;
+}
+
+.form-actions .secondary-btn:hover {
+  background: #d1d5db;
+}
+
+/* small fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive: stack cards on smaller screens ---------- */
+@media (max-width: 980px) {
+  .cards-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .selection-card {
+    max-width: 100%;
+  }
+}
+
+/* ========= BOOK NEXT CLASS PAGE ========= */
+
+.booknext-page {
+  min-height: 100vh;
+  background-color: #f5f7fb;
+}
+
+/* Hero with background photo */
+.booknext-hero {
+  position: relative;
+  height: 260px;
+  background-image: url("/images/groupfit-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.booknext-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(239, 76, 93, 0.85),
+    rgba(245, 135, 76, 0.85)
+  );
+}
+
+.booknext-hero-overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 40px 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.brand-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  margin-bottom: 12px;
+}
+
+.brand-logo-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #f25b5b;
+}
+
+.brand-text {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.booknext-hero-overlay h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.booknext-hero-overlay p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.booknext-form-section {
+  max-width: 900px;
+  margin: 32px auto 40px;
+  padding: 0 16px 40px;
+}
+
+.booknext-form-section h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.booknext-form-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 28px 28px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
+}
+
+.booknext-page .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.booknext-page .form-row label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.booknext-page .form-row input,
+.booknext-page .form-row select,
+.booknext-page .form-row textarea {
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  background-color: #f9fafb;
+}
+
+.booknext-page .form-row input:focus,
+.booknext-page .form-row select:focus,
+.booknext-page .form-row textarea:focus {
+  border-color: #ef4c5d;
+  box-shadow: 0 0 0 3px rgba(239, 76, 93, 0.15);
+  background-color: #ffffff;
+}
+
+.booknext-page .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.booknext-page .form-actions button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ef4c5d, #f5874c);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 10px 22px rgba(239, 76, 93, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+
+.booknext-page .form-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(239, 76, 93, 0.4);
+}
+
+.booknext-page .form-actions button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(239, 76, 93, 0.3);
+  opacity: 0.95;
+}

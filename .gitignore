@@ -1,3 +1,8 @@
+# Archives
+*.zip
+*.rar
+*.7z
+
 # Logs
 logs
 *.log

@@ -149,3 +149,244 @@
 .trainer-form h3 { margin-bottom:1rem; }
 .trainer-form input { display:block; width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:6px; border:1px solid #ccc; }
 .trainer-form button { padding:0.5rem 1rem; border:none; border-radius:6px; background:#2563eb; color:white; cursor:pointer; }
+
+.trainers-page {
+  padding: 20px;
+}
+
+.trainers-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.trainers-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trainers-table th,
+.trainers-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.trainers-table th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.trainers-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.trainers-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .trainers-table th,
+  .trainers-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+.delete-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Admin Login Page */
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f3f4f6; /* light gray background */
+  padding: 1rem;
+}
+
+.admin-login-card {
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.admin-login-card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #1f2937;
+}
+
+.admin-login-form input {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.admin-login-form button {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-login-form button:hover {
+  background: #1e40af;
+}
+
+.divider {
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  display: inline-block;
+  width: 40%;
+  height: 1px;
+  background: #d1d5db;
+  vertical-align: middle;
+  margin: 0 0.5rem;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: #db4437;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-google:hover {
+  background: #c1351d;
+}
+
+.error-text {
+  margin-top: 1rem;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* Reviews Table Styling */
+.reviews-table-container {
+  padding: 20px;
+  overflow-x: auto;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.reviews-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.reviews-table th,
+.reviews-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.reviews-table th {
+  background-color: #2563eb; /* blue header */
+  color: #fff;
+  font-weight: 600;
+}
+
+.reviews-table tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.reviews-table tr:hover {
+  background-color: #e0e7ff;
+}
+
+@media (max-width: 768px) {
+  .reviews-table th,
+  .reviews-table td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
+
+/* Hide/Unhide button */
+.btn-hide {
+  background-color: #2563eb; /* blue */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.2s ease;
+}
+.btn-hide:hover {
+  background-color: #1e40af;
+}
+
+/* Delete button */
+.btn-delete {
+  background-color: #ef4444; /* red */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Optional: style hidden reviews differently */
+.hidden-review {
+  opacity: 0.8;
+  font-style: italic;
+}

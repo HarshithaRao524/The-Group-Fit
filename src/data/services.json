@@ -1,0 +1,64 @@
+{
+    "services": {
+      "adults": {
+        "Yoga": {
+          "name": "Yoga",
+          "img": "/images/YogaAdult.jpg",
+          "desc": "A calming class focused on flexibility, breathing, and balance."
+        },
+        "Dance Fitness": {
+          "name": "Dance Fitness",
+          "img": "/images/DanceFitnessAdult.jpg",
+          "desc": "High-energy dance workouts to improve stamina and burn calories."
+        },
+        "Contemporary Dance": {
+          "name": "Contemporary Dance",
+          "img": "/images/ContemporaryDanceAdult.jpg",
+          "desc": "Blend of ballet and modern movements for strength and expression."
+        },
+        "Freestyle Dance": {
+          "name": "Freestyle Dance",
+          "img": "/images/FreestyleDanceAdult.jpg",
+          "desc": "Dynamic dance moves set to upbeat music to boost your confidence."
+        },
+        "Calisthenics": {
+          "name": "Calisthenics",
+          "img": "/images/CalisthenicsAdult.jpg",
+          "desc": "Bodyweight training to build strength and muscle control."
+        },
+        "Pilates": {
+          "name": "Pilates",
+          "img": "/images/PilatesAdult.jpg",
+          "desc": "Core-strengthening exercises for better posture and flexibility."
+        }
+      },
+      "kids": {
+        "Yoga": {
+          "name": "Yoga",
+          "img": "/images/YogaKids.jpg",
+          "desc": "Fun yoga sessions designed to improve flexibility and focus."
+        },
+        "Gymnastics": {
+          "name": "Gymnastics",
+          "img": "/images/GymnasticsKids.jpg",
+          "desc": "Balance, coordination, and flexibility training for children."
+        },
+        "Contemporary": {
+          "name": "Contemporary",
+          "img": "/images/ContemporaryDanceKids.jpg",
+          "desc": "Creative movement to express emotions through dance."
+        },
+        "Freestyle": {
+          "name": "Freestyle",
+          "img": "/images/FreestyleDanceKids.jpg",
+          "desc": "Energetic and expressive dance routines for kids."
+        },
+        "Hip Hop": {
+          "name": "Hip Hop",
+          "img": "/images/HipHopDanceKids.jpg",
+          "desc": "Cool hip hop dance sessions to boost rhythm and coordination."
+        }
+      }
+    }
+  }
+  

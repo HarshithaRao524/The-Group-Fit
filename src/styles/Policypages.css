@@ -1,0 +1,113 @@
+.privacy-policy {
+    background-color: #fff;
+    padding: 60px 20px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    line-height: 1.7;
+  }
+  
+  .privacy-policy .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fafafa;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .privacy-policy h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #222;
+  }
+  
+  .privacy-policy h2 {
+    margin-top: 25px;
+    color: #444;
+    font-size: 1.4rem;
+    border-left: 4px solid #3a9ecb;
+    padding-left: 10px;
+  }
+  
+  .privacy-policy p,
+  .privacy-policy li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .privacy-policy ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  
+  @media (max-width: 768px) {
+    .privacy-policy .container {
+      padding: 25px;
+    }
+  
+    .privacy-policy h1 {
+      font-size: 1.8rem;
+    }
+  }
+  
+
+.policy-container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    line-height: 1.8;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .policy-container h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #111;
+  }
+  
+  .policy-container h2 {
+    color: #222;
+    margin-top: 25px;
+    font-size: 20px;
+  }
+  
+  .policy-container p,
+  .policy-container li {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .policy-container ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  
+  hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+
+/* Additional FAQ formatting (optional) */
+.policy-container p strong {
+    color: #000;
+  }
+  
+  .policy-container h2 {
+    border-left: 4px solid #ff4081;
+    padding-left: 10px;
+  }
+  
+  .policy-container hr {
+    border-top: 1px dashed #bbb;
+  }
+  
+  .policy-container p:last-child {
+    margin-bottom: 40px;
+  }
+  

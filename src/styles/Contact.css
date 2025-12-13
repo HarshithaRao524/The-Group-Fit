@@ -1,0 +1,215 @@
+/* Contact.css */
+
+.contact-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f7f7f7, #e9f5f3);
+}
+
+.contact-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6b6b, #ff9f43);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.contact-sub {
+  color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+/* FAQs quick access below heading */
+.faq-top-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.faq-top-text {
+  color: #555;
+  font-size: 1rem;
+}
+
+.faq-top-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg,#ff6b6b,#ff9f43);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Grid: two equal side-by-side cards */
+.contact-grid {
+  display: flex;
+  gap: 28px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Make both cards equal width */
+.contact-form-card, .contact-card {
+  background: #fff;
+  padding: 26px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15,23,42,0.06);
+  flex: 1 1 0;
+  min-width: 300px;
+  max-width: 520px;
+}
+
+/* Center all text inside right card */
+.contact-card {
+  text-align: center;
+}
+
+/* Contact items: icons + text centered */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.contact-item p {
+  text-align: center;
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  color: #ff6b6b;
+}
+
+.contact-item a {
+  color: #007b55;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Form card */
+.card-heading {
+  text-align: left;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+/* NEW: label top + input below (keeps star inline but input below) */
+.input-label {
+  display: flex;
+  flex-direction: column; /* vertical: label-top above input */
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* horizontal small row for label text + star */
+.label-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* label text and star */
+.label-text {
+  font-weight: 600;
+}
+
+.req {
+  color: #d9534f;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* inputs */
+.input-label input,
+.input-label textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e3e7ea;
+  outline: none;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.input-label input:focus,
+.input-label textarea:focus {
+  border-color: #ff9f43;
+  box-shadow: 0 4px 14px rgba(255,159,67,0.08);
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.primary-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg,#ff6b6b,#ff9f43);
+  color: white;
+  font-weight: 600;
+}
+
+.ghost-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-status {
+  margin-top: 8px;
+  color: #0b6a4a;
+  font-weight: 600;
+}
+
+.faq-row {
+  margin-top: 14px;
+}
+
+.faq-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .contact-grid {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-title { font-size: 1.8rem; }
+  .contact-sub { font-size: 1rem; }
+}

@@ -33,5 +33,5 @@ export default function ProtectedRoute({ children }) {
 
   if (loading) return <p>Loading...</p>;
 
-  return isAdmin ? children : <Navigate to="/admin/login" />;
+  return isAdmin ? children : <Navigate to="/admin" />;
 }

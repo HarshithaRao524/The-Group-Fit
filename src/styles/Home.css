@@ -1,45 +1,474 @@
-/* Container styling */
-.home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 5rem 1rem;
-    min-height: 50vh;
-    background-color: #F0F4F3; /* subtle greenish background */
-    font-family: 'Inter', sans-serif;
-    color: #3b3b3b;
+/* ---------------------------------------------------
+   OVERALL LAYOUT
+--------------------------------------------------- */
+
+.home-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff, #f3f4f6);
+  color: #111827;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ---------------------------------------------------
+   HERO SECTION WITH SLIDESHOW
+--------------------------------------------------- */
+
+.hero-section {
+  position: relative;
+  height: 65vh;          /* controls how tall hero is */
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background slideshow */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeSlideshow 24s infinite;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* Use your existing images */
+.hero-slideshow .slide1 {
+  background-image: url("/images/YogaAdult.jpg");
+  animation-delay: 0s;
+}
+.hero-slideshow .slide2 {
+  background-image: url("/images/DanceFitnessAdult.jpg");
+  animation-delay: 6s;
+}
+.hero-slideshow .slide3 {
+  background-image: url("/images/ContemporaryDanceAdult.jpg");
+  animation-delay: 12s;
+}
+.hero-slideshow .slide4 {
+  background-image: url("/images/FreestyleDanceAdult.jpg");
+  animation-delay: 18s;
+}
+.hero-slideshow .slide5 {
+  background-image: url("/images/FreestyleDanceKids.jpg");
+  animation-delay: 18s;
+}
+.hero-slideshow .slide6 {
+  background-image: url("/images/YogaKids.jpg");
+  animation-delay: 18s;
+}
+.hero-slideshow .slide7 {
+  background-image: url("/images/GymnasticsKids.jpg");
+  animation-delay: 18s;
+}
+.hero-slideshow .slide8 {
+  background-image: url("/images/ContemporaryDanceKids.jpg");
+  animation-delay: 18s;
+}
+
+/* Fade animation */
+@keyframes fadeSlideshow {
+  0% {
+    opacity: 0;
   }
-  
-  /* Title styling */
-  .home-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #6F9A92; /* muted green */
-    line-height: 1.2;
+  5%,
+  25% {
+    opacity: 0.95;
   }
-  
-  /* Description styling */
-  .home-description {
-    font-size: 1.25rem;
-    max-width: 800px;
-    margin-bottom: 2rem;
-    color: #555555;
-    line-height: 1.6;
+  30%,
+  100% {
+    opacity: 0;
   }
-  
-  /* CTA link styling */
-  .home-cta a {
-    color: #E07A5F; /* muted coral / pinkish */
-    font-weight: 600;
-    text-decoration: underline;
-    font-size: 1.1rem;
-    transition: opacity 0.3s;
+}
+
+/* Overlay – slightly darker for better contrast */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: 1;
+}
+
+/* Text content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 10%;
+  max-width: 800px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+}
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+/* SUBTITLE – pure white, no opacity, extra glow */
+.hero-subtitle {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-ghost {
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+
+.btn-primary {
+  background-color: #e02424;
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(224, 36, 36, 0.65);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(224, 36, 36, 0.8);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Member / trainer line – pure white, no opacity */
+.hero-trainer-cta {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+}
+
+.hero-trainer-cta p {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Register link button – bright gold */
+.hero-trainer-cta .link-button {
+  border: none;
+  background: none;
+  color: #ffeb66 !important;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------------------------------------------------
+   YOGA TEACHER TRAINING PREVIEW
+--------------------------------------------------- */
+
+.ytt-preview {
+  padding: 32px 8% 20px;
+  background: #fef3c7; /* soft warm background */
+  border-top: 1px solid #fbbf24;
+  border-bottom: 1px solid #fbbf24;
+}
+
+.ytt-preview-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ytt-preview-text h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ytt-preview-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: #7c2d12;
+}
+
+.ytt-preview-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 20px;
+  background: #e02424;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Small button inside Yoga class card */
+.ytt-small-link {
+  margin: 0 12px 12px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  border: 1px solid #e02424;
+  background: #ffffff;
+  color: #e02424;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------
+   CLASSES / SERVICES SECTION
+--------------------------------------------------- */
+
+.services-section {
+  background-color: #ffffff;
+  color: #111827;
+  padding: 28px 7% 50px;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin-bottom: 24px;
+}
+
+.section-block {
+  margin-bottom: 28px;
+}
+
+.section-block h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.class-card {
+  background-color: #f9fafb;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.class-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.class-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 12px 4px;
+}
+
+.class-card p {
+  font-size: 13px;
+  padding: 0 12px 12px;
+  color: #4b5563;
+}
+
+.contact-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ---------------------------------------------------
+   REVIEWS SECTION
+--------------------------------------------------- */
+
+.reviews-section {
+  padding: 40px 7% 60px;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.reviews-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.reviews-list {
+  margin-bottom: 24px;
+}
+
+.reviews-list h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-card {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.profile-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #111827;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.review-content h4 {
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  gap: 2px;
+  margin: 2px 0 4px;
+}
+
+/* login + review form */
+
+.login-section,
+.review-form-section {
+  margin-top: 12px;
+}
+
+.login-section {
+  text-align: center;
+}
+
+.login-section button,
+.review-form button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.review-form textarea {
+  width: 100%;
+  min-height: 80px;
+  margin: 8px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.logout-btn {
+  border: none;
+  background: none;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+.rate-us {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+    padding-top: 10px;
   }
-  
-  .home-cta a:hover {
-    opacity: 0.8;
+
+  .hero-title {
+    font-size: 30px;
   }
-  
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .services-section {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .class-card img {
+    height: 150px;
+  }
+}
