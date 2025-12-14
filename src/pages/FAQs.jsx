@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/PolicyPages.css";
+import "../styles/Policypages.css";
 
 const FAQs = () => {
   return (

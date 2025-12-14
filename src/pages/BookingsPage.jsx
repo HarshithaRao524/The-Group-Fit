@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ref, onValue, off } from "firebase/database";
 import { db } from "../firebase";
-import "../styles/Admin.css";
+import "../styles/admin.css";
 
 export default function BookingsPage() {
   const [bookings, setBookings] = useState([]);

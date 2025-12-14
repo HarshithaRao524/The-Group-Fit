@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, provider, db } from "../firebase";
 import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import { ref, get } from "firebase/database";
-import "../styles/Admin.css";
+import "../styles/admin.css";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
