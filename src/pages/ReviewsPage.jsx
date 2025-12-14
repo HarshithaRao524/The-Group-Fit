@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ref, onValue, remove, update } from "firebase/database";
 import { db } from "../firebase";  // Assuming your Firebase config is imported
-import "../styles/Admin.css";
+import "../styles/admin.css";
 
 export default function ReviewsPage() {
   const [reviews, setReviews] = useState([]);
