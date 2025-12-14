@@ -1,7 +1,7 @@
 // src/admin/AdminSidebar.jsx
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/Admin.css";
+import "../styles/admin.css";
 
 export default function AdminSidebar() {
   const activeClass = ({ isActive }) => (isActive ? "active" : "");

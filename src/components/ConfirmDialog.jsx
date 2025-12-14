@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Admin.css";
+import "../styles/admin.css";
 
 export default function ConfirmDialog({ 
   open, 

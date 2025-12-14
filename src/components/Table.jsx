@@ -1,6 +1,6 @@
 // src/components/Table.jsx
 import React from "react";
-import "../styles/Admin.css";
+import "../styles/admin.css";
 
 /**
  * Reusable Admin Table Component
