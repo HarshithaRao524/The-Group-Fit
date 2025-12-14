@@ -35,6 +35,14 @@ const Home = () => {
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState("");
 
+  // ✅ ADDED: Restore login state after refresh
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
   // Fetch services (Live updates)
   useEffect(() => {
     const servicesRef = ref(db, "services");
@@ -64,7 +72,7 @@ const Home = () => {
       const data = snapshot.val();
       if (data) {
         const arr = Object.values(data)
-          .filter((r) => !r.hidden) // Ensure hidden reviews are not displayed
+          .filter((r) => !r.hidden)
           .sort((a, b) => b.timestamp - a.timestamp);
         setReviews(arr);
       } else {
@@ -118,7 +126,7 @@ const Home = () => {
 
     push(ref(db, "reviews"), newReview);
 
-    setReviews([newReview, ...reviews]);
+    // ❌ REMOVED: setReviews([newReview, ...reviews]);
     setRating(0);
     setComment("");
   };
@@ -127,7 +135,6 @@ const Home = () => {
     <div className="home-wrapper">
       {/* --------------------- HERO SECTION --------------------- */}
       <section className="hero-section">
-        {/* Background slideshow */}
         <div className="hero-slideshow">
           <div className="slide slide1" />
           <div className="slide slide2" />
@@ -139,10 +146,8 @@ const Home = () => {
           <div className="slide slide8" />
         </div>
 
-        {/* Dark overlay */}
         <div className="hero-overlay" />
 
-        {/* Centered hero content */}
         <div className="hero-content">
           <h1 className="hero-title">
             &quot;Fitness is not a destination, it&apos;s a way of life&quot;
@@ -217,7 +222,6 @@ const Home = () => {
                 <h4>{cls.name}</h4>
                 <p>{cls.desc}</p>
 
-                {/* Extra link only for Yoga card */}
                 {cls.name === "Yoga" && (
                   <button
                     className="ytt-small-link"
@@ -253,7 +257,6 @@ const Home = () => {
       <section className="reviews-section">
         <h2 className="reviews-title">Feedback</h2>
 
-        {/* GOOGLE REVIEWS */}
         {googleReviews.length > 0 && (
           <div className="reviews-list">
             <h3>Google Reviews</h3>
@@ -276,7 +279,6 @@ const Home = () => {
           </div>
         )}
 
-        {/* USER REVIEWS */}
         <div className="reviews-list">
           <h3>Trainer Feedback</h3>
 
@@ -308,7 +310,6 @@ const Home = () => {
           ))}
         </div>
 
-        {/* SIGN IN + REVIEW FORM */}
         {!user ? (
           <div className="login-section">
             <p className="login-text">Sign in to submit your feedback</p>
@@ -346,7 +347,7 @@ const Home = () => {
                 placeholder="Write your review..."
               ></textarea>
 
-              <button type="submit">Submit Review</button>
+              <button type="submit">Submit Feedback</button>
             </form>
           </div>
         )}
