@@ -1,7 +1,7 @@
 // src/admin/AdminHeader.jsx
 import React from "react";
 import { useAuth } from "../contexts/AuthContext";
-import "../styles/Admin.css";
+import "../styles/admin.css";
 
 export default function AdminHeader() {
   const { logout } = useAuth();
