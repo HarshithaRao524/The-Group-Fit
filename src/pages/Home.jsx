@@ -4,14 +4,7 @@ import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
 import { auth, provider, db } from "../firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
-import {
-  ref,
-  push,
-  onValue,
-  query,
-  orderByChild,
-  get,
-} from "firebase/database";
+import { ref, push, onValue, query, orderByChild } from "firebase/database";
 import { Star } from "lucide-react";
 
 // Service ordering
@@ -42,34 +35,36 @@ const Home = () => {
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState("");
 
-  // Fetch services
+  // Fetch services (Live updates)
   useEffect(() => {
-    const fetchServices = async () => {
-      const snapshot = await get(ref(db, "services"));
-      if (snapshot.exists()) {
-        const data = snapshot.val();
+    const servicesRef = ref(db, "services");
 
-        const adults = adultOrder
-          .map((key) => data.adults[key])
-          .filter(Boolean);
+    onValue(servicesRef, (snap) => {
+      if (!snap.exists()) return;
 
-        const kids = kidsOrder.map((key) => data.kids[key]).filter(Boolean);
+      const data = snap.val();
 
-        setAdultClasses(adults);
-        setKidsClasses(kids);
-      }
-    };
-    fetchServices();
+      const adults = adultOrder
+        .map((key) => data.adults?.[key])
+        .filter((cls) => cls && cls.active);
+
+      const kids = kidsOrder
+        .map((key) => data.kids?.[key])
+        .filter((cls) => cls && cls.active);
+
+      setAdultClasses(adults);
+      setKidsClasses(kids);
+    });
   }, []);
 
-  // Fetch reviews (firebase + google reviews)
+  // Fetch reviews (firebase + google reviews) (Live updates)
   useEffect(() => {
     const reviewRef = query(ref(db, "reviews"), orderByChild("timestamp"));
     onValue(reviewRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         const arr = Object.values(data)
-          .filter((r) => !r.hidden)
+          .filter((r) => !r.hidden) // Ensure hidden reviews are not displayed
           .sort((a, b) => b.timestamp - a.timestamp);
         setReviews(arr);
       } else {

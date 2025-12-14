@@ -1,4 +1,4 @@
-// src/admin/DashboardHome.jsx
+// src/pages/DashboardHome.jsx
 import React, { useEffect, useState } from "react";
 import { ref, get } from "firebase/database";
 import { db } from "../firebase";
@@ -14,34 +14,46 @@ export default function DashboardHome() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const trainersSnap = await get(ref(db, "trainers"));
-        const bookingsSnap = await get(ref(db, "bookings"));
-        const reviewsSnap = await get(ref(db, "reviews"));
+        const [trainersSnap, bookingsSnap, reviewsSnap] = await Promise.all([
+          get(ref(db, "trainers")),
+          get(ref(db, "bookings")),
+          get(ref(db, "reviews")),
+        ]);
 
         setStats({
-          trainers: trainersSnap.exists() ? Object.keys(trainersSnap.val()).length : 0,
-          bookings: bookingsSnap.exists() ? Object.keys(bookingsSnap.val()).length : 0,
-          reviews: reviewsSnap.exists() ? Object.keys(reviewsSnap.val()).length : 0,
+          trainers: trainersSnap.exists()
+            ? Object.keys(trainersSnap.val()).length
+            : 0,
+          bookings: bookingsSnap.exists()
+            ? Object.keys(bookingsSnap.val()).length
+            : 0,
+          reviews: reviewsSnap.exists()
+            ? Object.keys(reviewsSnap.val()).length
+            : 0,
         });
-      } catch (err) {
-        console.error(err);
+      } catch (error) {
+        console.error("Failed to fetch dashboard stats:", error);
       }
     };
+
     fetchStats();
   }, []);
 
   return (
     <div className="dashboard-home">
       <h3>Dashboard Overview</h3>
+
       <div className="cards">
         <div className="card">
           <h4>Trainers</h4>
           <p>{stats.trainers}</p>
         </div>
+
         <div className="card">
           <h4>Bookings</h4>
           <p>{stats.bookings}</p>
         </div>
+
         <div className="card">
           <h4>Reviews</h4>
           <p>{stats.reviews}</p>

@@ -3,10 +3,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Admin.css";
 
-/**
- * AdminSidebar - uses absolute paths that match the nested admin routes
- * mounted at /admin/dashboard in App.jsx.
- */
 export default function AdminSidebar() {
   const activeClass = ({ isActive }) => (isActive ? "active" : "");
 
@@ -20,26 +16,37 @@ export default function AdminSidebar() {
               Home
             </NavLink>
           </li>
+
+          <li>
+            <NavLink to="/admin/dashboard/new-users" className={activeClass}>
+              New Users
+            </NavLink>
+          </li>
+
           <li>
             <NavLink to="/admin/dashboard/trainers" className={activeClass}>
               Trainers
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/admin/dashboard/bookings" className={activeClass}>
               Bookings
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/admin/dashboard/reviews" className={activeClass}>
               Reviews
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/admin/dashboard/services" className={activeClass}>
               Services
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/admin/dashboard/contacts" className={activeClass}>
               Contact Messages

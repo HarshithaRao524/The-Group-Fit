@@ -292,7 +292,7 @@
 
 .class-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -306,7 +306,7 @@
 
 .class-card img {
   width: 100%;
-  height: 160px;
+  height: 200px;
   object-fit: cover;
   display: block;
 }
@@ -470,5 +470,17 @@
 @media (max-width: 500px) {
   .class-card img {
     height: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .class-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .class-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -27,14 +27,15 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import BookNextClass from "./pages/BookNextClass";
 import YogaTeacherTraining from "./pages/YogaTeacherTraining";
 
+// ✅ NEW ADMIN PAGE
+import NewUsers from "./pages/NewUsers";
+
 function App() {
   return (
     <Router>
-      {/* App container ensures full height layout */}
       <div className="app-container">
         <Navbar />
 
-        {/* Content area grows to push footer down */}
         <main className="main-content">
           <Routes>
             {/* Public pages */}
@@ -47,7 +48,7 @@ function App() {
             <Route path="/TermsConditions" element={<TermsConditions />} />
             <Route path="/faqs" element={<FAQs />} />
 
-            {/* NEW: Yoga Teacher Training public page */}
+            {/* Yoga Teacher Training */}
             <Route
               path="/yoga-teacher-training"
               element={<YogaTeacherTraining />}
@@ -56,7 +57,7 @@ function App() {
             {/* Admin login */}
             <Route path="/admin" element={<AdminLogin />} />
 
-            {/* Admin dashboard (protected) with nested routes */}
+            {/* Admin dashboard (protected) */}
             <Route
               path="/admin/dashboard"
               element={
@@ -66,6 +67,7 @@ function App() {
               }
             >
               <Route index element={<DashboardHome />} />
+              <Route path="new-users" element={<NewUsers />} />
               <Route path="trainers" element={<TrainersPage />} />
               <Route path="bookings" element={<BookingsPage />} />
               <Route path="reviews" element={<ReviewsPage />} />

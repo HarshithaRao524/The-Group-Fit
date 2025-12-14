@@ -1,0 +1,169 @@
+{
+    "admins": {
+        "rb8KWyoJUggvYQrGMPEMv7gkQf63": {
+          "email": "thegroupfit@gmail.com",
+          "name": "Super Admin",
+          "role": "admin"
+        }
+    },
+  
+    "services": {
+      "adults": {
+        "Yoga": {
+          "name": "Yoga",
+          "img": "/images/YogaAdult.jpg",
+          "desc": "A calming class focused on flexibility, breathing, and balance.",
+          "price": 250,
+          "active": true
+        },
+        "Dance Fitness": {
+          "name": "Dance Fitness",
+          "img": "/images/DanceFitnessAdult.jpg",
+          "desc": "High-energy dance workouts to improve stamina and burn calories.",
+          "price": 299,
+          "active": true
+        },
+        "Contemporary Dance": {
+          "name": "Contemporary Dance",
+          "img": "/images/ContemporaryDanceAdult.jpg",
+          "desc": "Blend of ballet and modern movements for strength and expression.",
+          "price": 299,
+          "active": true
+        },
+        "Freestyle Dance": {
+          "name": "Freestyle Dance",
+          "img": "/images/FreestyleDanceAdult.jpg",
+          "desc": "Dynamic dance moves set to upbeat music to boost your confidence.",
+          "price": 299,
+          "active": true
+        },
+        "Calisthenics": {
+          "name": "Calisthenics",
+          "img": "/images/CalisthenicsAdult.jpg",
+          "desc": "Bodyweight training to build strength and muscle control.",
+          "price": 299,
+          "active": true
+        },
+        "Pilates": {
+          "name": "Pilates",
+          "img": "/images/PilatesAdult.jpg",
+          "desc": "Core-strengthening exercises for better posture and flexibility.",
+          "price": 299,
+          "active": true
+        }
+      },
+  
+      "kids": {
+        "Yoga": {
+          "name": "Yoga",
+          "img": "/images/YogaKids.jpg",
+          "desc": "Fun yoga sessions designed to improve flexibility and focus.",
+          "price": 299,
+          "active": true
+        },
+        "Gymnastics": {
+          "name": "Gymnastics",
+          "img": "/images/GymnasticsKids.jpg",
+          "desc": "Balance, coordination, and flexibility training for children.",
+          "price": 299,
+          "active": true
+        },
+        "Contemporary": {
+          "name": "Contemporary",
+          "img": "/images/ContemporaryDanceKids.jpg",
+          "desc": "Creative movement to express emotions through dance.",
+          "price": 299,
+          "active": true
+        },
+        "Freestyle": {
+          "name": "Freestyle",
+          "img": "/images/FreestyleDanceKids.jpg",
+          "desc": "Energetic and expressive dance routines for kids.",
+          "price": 299,
+          "active": true
+        },
+        "Hip Hop": {
+          "name": "Hip Hop",
+          "img": "/images/HipHopDanceKids.jpg",
+          "desc": "Cool hip hop dance sessions to boost rhythm and coordination.",
+          "price": 299,
+          "active": true
+        }
+      }
+    },
+  
+    "bookings": {
+      "booking_001": {
+        "fullName": "Sample User",
+        "age": 28,
+        "gender": "Female",
+        "contact": "9876543210",
+        "email": "user@example.com",
+        "society": "Brigade Metropolis",
+        "selectedCategory": "adults",
+        "selectedClass": "Yoga",
+        "schedule": "Mon-Wed-Fri 6AM",
+        "classesPerWeek": 3,
+        "classType": "Group",
+        "amount": 250,
+        "paymentStatus": "paid",
+        "paymentId": "razorpay_payment_id",
+        "createdAt": 1736505000000
+      }
+    },
+  
+    "reviews": {
+      "review_001": {
+        "name": "Harshitha",
+        "rating": 5,
+        "comment": "Amazing classes and trainers!",
+        "hidden": false,
+        "timestamp": 1736336520000
+      }
+    },
+  
+    "trainers": {
+      "trainer_001": {
+        "fullName": "Ananya Sharma",
+        "contact": "9123456789",
+        "email": "ananya@thegroupfit.in",
+        "specialization": "Yoga",
+        "experience": 5,
+        "availabilityType": "Morning",
+        "availabilityTime": "",
+        "cityName": "Bangalore",
+        "shortBio": "Certified yoga instructor with 5 years experience",
+        "photoUrl": "https://firebasestorage.googleapis.com/...",
+        "createdAt": 1736336520000
+      }
+    },
+  
+    "contacts": {
+      "contact_001": {
+        "name": "Visitor Name",
+        "email": "visitor@gmail.com",
+        "contact": "9000000000",
+        "message": "I want details about kids classes",
+        "createdAt": 1736075700000
+      }
+    },
+  
+    "payments": {
+      "payment_001": {
+        "bookingId": "booking_001",
+        "amount": 250,
+        "currency": "INR",
+        "gateway": "razorpay",
+        "status": "success",
+        "createdAt": 1736505060000
+      }
+    },
+  
+    "settings": {
+      "notifications": {
+        "sendEmailOnPayment": true,
+        "sendWhatsAppOnPayment": true
+      }
+    }
+  }
+  

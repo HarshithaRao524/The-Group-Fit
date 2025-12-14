@@ -1,37 +1,43 @@
-import React, { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
-import { ref, get } from "firebase/database";
-import { auth, db } from "../firebase";
+// src/components/Table.jsx
+import React from "react";
+import "../styles/Admin.css";
 
-export default function ProtectedRoute({ children }) {
-  const [loading, setLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+/**
+ * Reusable Admin Table Component
+ * columns = [{ key: "name", label: "Name" }]
+ * data = [{ name: "Yoga", price: 250 }]
+ * actions = (row) => JSX buttons
+ */
+export default function Table({ columns = [], data = [], actions }) {
+  if (!data.length) {
+    return <p style={{ marginTop: "20px" }}>No data available.</p>;
+  }
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        try {
-          const snapshot = await get(ref(db, `admins/${user.uid}`));
-          if (snapshot.exists()) {
-            setIsAdmin(true);
-          } else {
-            setIsAdmin(false);
-          }
-        } catch (err) {
-          console.error("Error checking admin:", err);
-          setIsAdmin(false);
-        }
-      } else {
-        setIsAdmin(false);
-      }
-      setLoading(false);
-    });
+  return (
+    <div className="table-container">
+      <table className="admin-table">
+        <thead>
+          <tr>
+            {columns.map((col) => (
+              <th key={col.key}>{col.label}</th>
+            ))}
+            {actions && <th>Actions</th>}
+          </tr>
+        </thead>
 
-    return () => unsubscribe();
-  }, []);
-
-  if (loading) return <p>Loading...</p>;
-
-  return isAdmin ? children : <Navigate to="/admin/login" />;
+        <tbody>
+          {data.map((row, idx) => (
+            <tr key={idx}>
+              {columns.map((col) => (
+                <td key={col.key}>
+                  {row[col.key] !== undefined ? row[col.key] : "—"}
+                </td>
+              ))}
+              {actions && <td>{actions(row)}</td>}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }

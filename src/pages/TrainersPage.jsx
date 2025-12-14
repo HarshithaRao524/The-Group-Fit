@@ -9,14 +9,16 @@ export default function TrainersPage() {
 
   useEffect(() => {
     const trainersRef = ref(db, "trainers");
+
     const unsubscribe = onValue(trainersRef, (snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
-        // Store trainer details along with their unique keys
+
         const trainersList = Object.entries(data).map(([key, value]) => ({
           id: key,
           ...value,
         }));
+
         setTrainers(trainersList);
       } else {
         setTrainers([]);
@@ -26,12 +28,13 @@ export default function TrainersPage() {
     return () => unsubscribe();
   }, []);
 
-  // ✅ Delete Trainer Function
+  // 🗑 Delete trainer
   const handleDelete = async (trainerId, trainerName) => {
-    const confirmDelete = window.confirm(
-      `Are you sure you want to delete trainer "${trainerName}"?`
-    );
-    if (confirmDelete) {
+    if (
+      window.confirm(
+        `Are you sure you want to delete trainer "${trainerName}"?`
+      )
+    ) {
       try {
         await remove(ref(db, `trainers/${trainerId}`));
         alert(`Trainer "${trainerName}" deleted successfully!`);
@@ -45,11 +48,13 @@ export default function TrainersPage() {
   return (
     <div className="trainers-page">
       <h2>Registered Trainers</h2>
+
       {trainers.length > 0 ? (
         <div className="table-container">
           <table className="trainers-table">
             <thead>
               <tr>
+                <th>Photo</th>
                 <th>Full Name</th>
                 <th>Contact</th>
                 <th>Email</th>
@@ -60,16 +65,46 @@ export default function TrainersPage() {
                 <th>Action</th>
               </tr>
             </thead>
+
             <tbody>
-              {trainers.map((trainer, index) => (
-                <tr key={index}>
+              {trainers.map((trainer) => (
+                <tr key={trainer.id}>
+                  {/* 📸 PHOTO */}
+                  <td>
+                    {trainer.photoUrl ? (
+                      <img
+                        src={trainer.photoUrl}
+                        alt={trainer.fullName}
+                        style={{
+                          width: "50px",
+                          height: "50px",
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    ) : (
+                      "—"
+                    )}
+                  </td>
+
                   <td>{trainer.fullName || "—"}</td>
                   <td>{trainer.contact || "—"}</td>
                   <td>{trainer.email || "—"}</td>
                   <td>{trainer.specialization || "—"}</td>
                   <td>{trainer.experience || "—"}</td>
-                  <td>{trainer.availability || "—"}</td>
-                  <td>{trainer.bio || "—"}</td>
+
+                  {/* ✅ Correct availability fields */}
+                  <td>
+                    {trainer.availabilityType
+                      ? `${trainer.availabilityType} ${
+                          trainer.availabilityTime || ""
+                        }`
+                      : "—"}
+                  </td>
+
+                  {/* ✅ Correct bio field */}
+                  <td>{trainer.shortBio || "—"}</td>
+
                   <td>
                     <button
                       className="delete-btn"

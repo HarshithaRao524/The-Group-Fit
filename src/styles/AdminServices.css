@@ -1,0 +1,151 @@
+.admin-services-page {
+    padding: 20px;
+  }
+  
+  .admin-services-page h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* ---------- FORM ---------- */
+  
+  .service-form {
+    max-width: 520px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+  }
+  
+  .service-form h3 {
+    margin-bottom: 16px;
+  }
+  
+  .service-form input,
+  .service-form textarea,
+  .service-form select {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+  }
+  
+  .service-form textarea {
+    min-height: 80px;
+  }
+  
+  .service-form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(90deg,#2563eb,#1e40af);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  /* ---------- ACTIVE TOGGLE ---------- */
+  
+  .active-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0 18px;
+  }
+  
+  .active-label {
+    font-weight: 600;
+  }
+  
+  /* Toggle */
+  .switch {
+    position: relative;
+    width: 46px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    inset: 0;
+    background: #d1d5db;
+    border-radius: 999px;
+    transition: 0.3s;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .switch input:checked + .slider {
+    background: #2563eb;
+  }
+  
+  .switch input:checked + .slider::before {
+    transform: translateX(22px);
+  }
+  
+  /* ---------- SERVICE LIST ---------- */
+  
+  .services-list {
+    margin-top: 30px;
+  }
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+  }
+  
+  .service-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .service-card h4 {
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .service-card p {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+  
+  .price {
+    font-weight: 700;
+  }
+  
+  .delete-btn {
+    width: 100%;
+    border: none;
+    background: #ef4444;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
