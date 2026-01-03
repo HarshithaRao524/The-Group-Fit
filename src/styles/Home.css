@@ -484,3 +484,46 @@
     grid-template-columns: 1fr;
   }
 }
+
+.contact-box-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #111;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-box-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Contact CTA text */
+.contact-text {
+  margin-top: 24px;
+  font-size: 20px;           /* bigger text */
+  font-weight: 600;
+  color: #000008;            /* dark slate / premium look */
+  text-align: center;        /* center text */
+}
+
+/* Small contact box button */
+.contact-box-btn {
+  display: block;            /* allows centering */
+  margin: 14px auto 0;       /* center horizontally */
+  padding: 8px 18px;
+  font-size: 14px;
+  border: 1.5px solid #111;
+  background: linear-gradient(90deg, #ff6b6b, #ff9f43);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-box-btn:hover {
+  background-color: #111;
+  color: #fff;
+}

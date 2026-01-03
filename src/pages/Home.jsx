@@ -248,9 +248,20 @@ const Home = () => {
           </div>
         </div>
 
-        <p className="contact-text">
+        <p
+        className="contact-text"
+        onClick={() => navigate("/contact")}
+        style={{ cursor: "pointer" }}
+        >
           Contact us if you want to start classes in your society.
-        </p>
+          </p>
+          <button
+          className="contact-box-btn"
+          onClick={() => navigate("/contact")}
+          >
+            Contact Us
+            </button>
+
       </section>
 
       {/* ------------------------- REVIEWS SECTION -------------------------- */}

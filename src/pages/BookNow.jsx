@@ -212,6 +212,79 @@
           </div>
         </div>
 
+        {/* ================= EXTRA CONTENT BELOW FORMS ================= */}
+
+<section className="trainer-community-section">
+  <h2>Join the GroupFit Trainer Community</h2>
+  <p className="trainer-subtitle">
+    A professional network for instructors who want consistency, growth, and respect.
+  </p>
+
+  <div className="trainer-description">
+    GroupFit is building a curated instructor community across Dance Fitness,
+    Contemporary, Hip-Hop, Yoga, Kids Dance, and Mind–Body formats in
+    <strong> Whitefield & East Bangalore</strong>.
+    <br /><br />
+    We’re not just a studio. <strong>We’re a platform.</strong>
+    <br />
+    If you’re a serious instructor looking to work with high-quality communities —
+    without chasing RWAs or negotiating every month — welcome.
+  </div>
+
+  <h3 className="auction-heading">
+    🔥 LIVE CLASS AUCTIONS – DANCE INSTRUCTORS (WHITEFIELD)
+  </h3>
+
+  <div className="auction-grid">
+    <div className="auction-card">
+      <h4>💃 Dance Fitness</h4>
+      <p>Tuesday – 8:00 AM</p>
+      <p>Friday – 7:00 PM</p>
+      <p className="price">₹750 / class + attendance bonus</p>
+    </div>
+
+    <div className="auction-card">
+      <h4>🩰 Contemporary (Adults)</h4>
+      <p>Tuesday – 7:00 PM</p>
+      <p>Friday – 7:00 PM</p>
+      <p className="price">₹750 / class</p>
+    </div>
+
+    <div className="auction-card">
+      <h4>👧 Kids Contemporary</h4>
+      <p>Monday – 5:00 PM</p>
+      <p>Wednesday – 5:00 PM</p>
+      <p className="price">₹750 / class</p>
+    </div>
+
+    <div className="auction-card">
+      <h4>🔥 Freestyle / Hip Hop</h4>
+      <p>Tuesday – 6:00 PM</p>
+      <p>Friday – 6:00 PM</p>
+      <p className="price">₹750 / class</p>
+    </div>
+  </div>
+
+  <div className="auction-rules">
+    <h4>⏳ Bidding Details</h4>
+    <ul>
+      <li>Bidding closes within 24 hours</li>
+      <li>Instagram / performance video mandatory</li>
+      <li>Lowest bid does NOT automatically win</li>
+      <li>Selection based on skill, reliability & availability</li>
+    </ul>
+  </div>
+
+  <div className="trainer-cta">
+    <p>
+      Only registered instructors can bid on live classes.
+    </p>
+    <button onClick={() => handleToggle("trainer")}>
+      Apply via GroupFit Trainer Network
+    </button>
+  </div>
+</section>
+
         {/* Forms */}
         <div className="form-section">
           {activeForm === "newUser" && (
@@ -556,6 +629,7 @@
             </div>
           )}
         </div>
+
       </div>
     );
   };

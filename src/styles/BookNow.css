@@ -226,6 +226,7 @@
 @media (max-width: 980px) {
   .cards-wrapper {
     flex-wrap: wrap;
+    margin-bottom: 10px;
   }
 
   .selection-card {
@@ -393,3 +394,96 @@
   box-shadow: 0 8px 16px rgba(239, 76, 93, 0.3);
   opacity: 0.95;
 }
+
+/* ================= TRAINER COMMUNITY SECTION ================= */
+
+.trainer-community-section {
+  margin-top: 20px;        /* was too large before */
+  padding: 32px 24px;      /* reduce vertical padding */
+  background: #fff7f4;
+  border-radius: 24px;
+}
+
+.trainer-community-section h2 {
+  margin-top: 0;           /* removes extra invisible space */
+  margin-bottom: 12px;
+}
+
+.trainer-subtitle {
+  margin-bottom: 20px;
+}
+
+.trainer-description {
+  max-width: 780px;
+  margin: 28px auto;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.auction-title {
+  margin-top: 36px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.auction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.auction-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.auction-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.auction-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.auction-card .price {
+  margin-top: 8px;
+  font-weight: 700;
+  color: #ef4c5d;
+}
+
+.auction-card .muted {
+  font-size: 13px;
+  color: #666;
+}
+
+.trainer-cta {
+  margin-top: 36px;
+}
+
+.trainer-cta p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.trainer-cta button {
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ef4c5d, #f5874c);
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(239, 76, 93, 0.35);
+}
+
