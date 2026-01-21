@@ -35,6 +35,18 @@ const Home = () => {
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState("");
 
+  // Flash popup
+const [showPopup, setShowPopup] = useState(false);
+
+// Show popup after 5 seconds
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowPopup(true);
+  }, 5000);
+
+  return () => clearTimeout(timer);
+}, []);
+
   // ✅ ADDED: Restore login state after refresh
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
@@ -133,6 +145,39 @@ const Home = () => {
 
   return (
     <div className="home-wrapper">
+      {/* 🔥 FLASH POPUP */}
+{showPopup && (
+  <div className="flash-popup-overlay">
+    <div className="flash-popup fancy-popup">
+      <button
+        className="popup-close"
+        onClick={() => setShowPopup(false)}
+      >
+        ✕
+      </button>
+
+      <span className="popup-badge">New</span>
+
+      <h3>Trainer Joining Open!</h3>
+
+      <p className="popup-price">
+        ₹1000 <span>/ Dance Fitness Session</span>
+      </p>
+
+      <p className="popup-subtext">
+        Passionate about dance fitness? Join our growing trainer team today.
+      </p>
+
+      <button
+        className="popup-call-btn"
+        onClick={() => navigate("/booknow")}
+      >
+        Join Now
+      </button>
+    </div>
+  </div>
+)}
+
       {/* --------------------- HERO SECTION --------------------- */}
       <section className="hero-section">
         <div className="hero-slideshow">
@@ -154,7 +199,7 @@ const Home = () => {
           </h1>
 
           <p className="hero-subtitle">
-            At Group-Fit we provide fitness for all ages online or offline!
+            At Group-Fit we provide fitness for all ages online and offline!
             <br />
             Yoga, Dance Fitness, Gymnastics and Athletic classes.
             <br />
