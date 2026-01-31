@@ -13,11 +13,7 @@ export default function ProtectedRoute({ children }) {
       if (user) {
         try {
           const snapshot = await get(ref(db, `admins/${user.uid}`));
-          if (snapshot.exists()) {
-            setIsAdmin(true);
-          } else {
-            setIsAdmin(false);
-          }
+          setIsAdmin(snapshot.exists());
         } catch (err) {
           console.error("Error checking admin:", err);
           setIsAdmin(false);
@@ -31,7 +27,8 @@ export default function ProtectedRoute({ children }) {
     return () => unsubscribe();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  // 🔑 Critical line – prevents live-site redirect bug
+  if (loading) return null;
 
-  return isAdmin ? children : <Navigate to="/admin" />;
+  return isAdmin ? children : <Navigate to="/admin" replace />;
 }
