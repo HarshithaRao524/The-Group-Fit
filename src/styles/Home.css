@@ -625,3 +625,78 @@
 .popup-call-btn:hover {
   transform: scale(1.03);
 }
+
+/* ------------------ CLIENTS SECTION ------------------ */
+
+.clients-section {
+  padding: 40px 7%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.clients-section h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.clients-subtext {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.client-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* CTA */
+.clients-cta {
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #111;
+}
+
+/* ------------------ SOCIETY CONCEPT ------------------ */
+
+.society-concept {
+  padding: 50px 7%;
+  background: linear-gradient(180deg, #f9fafb, #ffffff);
+  text-align: center;
+}
+
+.concept-subtitle {
+  margin: 10px 0 30px;
+  color: #4b5563;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.concept-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.concept-note {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #374151;
+}

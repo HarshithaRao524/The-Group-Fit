@@ -309,6 +309,72 @@ useEffect(() => {
 
       </section>
 
+      {/* ------------------------- CLIENTS SECTION -------------------------- */}
+<section className="clients-section">
+  <h2>Our Esteemed Clients</h2>
+  <p className="clients-subtext">
+    Trusted by leading residential communities across Bengaluru
+  </p>
+
+  <div className="clients-grid">
+    {[
+      "Prestige Shantiniketan",
+      "Prestige Sunnyside",
+      "Brigade Metropolis",
+      "Brigade Cornerstone Utopia",
+      "Vaswani Exquisite",
+      "Godrej United",
+      "Urban Forest",
+      "Sumadhura Samruddhi",
+      "Raja Ritz Avenue",
+      "Pressure White Meadows",
+    ].map((name, idx) => (
+      <div key={idx} className="client-card">
+        {/* Replace text with logo later if available */}
+        <span>{name}</span>
+      </div>
+    ))}
+  </div>
+
+  <p
+    className="clients-cta"
+    onClick={() => navigate("/contact")}
+  >
+    Want fitness classes in your society? <strong>Contact us</strong>
+  </p>
+</section>
+
+{/* -------------------- SOCIETY FITNESS CONCEPT -------------------- */}
+<section className="society-concept">
+  <h2>Fitness for Every Age. Right Inside Your Society.</h2>
+
+  <p className="concept-subtitle">
+    Think Cult. Think community. Now think closer to home.
+  </p>
+
+  <div className="concept-grid">
+    <div className="concept-card">
+      <h4>🧘 Adults</h4>
+      <p>Yoga • Dance Fitness • Pilates • Calisthenics</p>
+    </div>
+
+    <div className="concept-card">
+      <h4>🤸 Kids</h4>
+      <p>Gymnastics • Dance • Strength & Mobility</p>
+    </div>
+
+    <div className="concept-card">
+      <h4>🏡 Society Model</h4>
+      <p>No travel • Familiar space • Strong community energy</p>
+    </div>
+  </div>
+
+  <p className="concept-note">
+    Inspired by successful fitness communities like Cult and Khelomore —  
+    built exclusively for residential societies.
+  </p>
+</section>
+
       {/* ------------------------- REVIEWS SECTION -------------------------- */}
       <section className="reviews-section">
         <h2 className="reviews-title">Feedback</h2>
