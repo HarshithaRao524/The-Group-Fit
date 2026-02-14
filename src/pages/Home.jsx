@@ -327,7 +327,7 @@ useEffect(() => {
       "Urban Forest",
       "Sumadhura Samruddhi",
       "Raja Ritz Avenue",
-      "Pressure White Meadows",
+      "Prestige White Meadows",
     ].map((name, idx) => (
       <div key={idx} className="client-card">
         {/* Replace text with logo later if available */}
